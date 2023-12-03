@@ -5,7 +5,7 @@ export default function PostsItem({ post, index }) {
   return (
     <StPostsItem>
       <PostsItemId>{index + 1}</PostsItemId>
-      <PostsItemTitle>{post.title}</PostsItemTitle>
+      <PostsItemTitle href={"/post/" + post.id}>{post.title}</PostsItemTitle>
       <PostsItemContent>{post.question}</PostsItemContent>
       <PostsItemUser>
         <span></span>
@@ -26,7 +26,7 @@ export default function PostsItem({ post, index }) {
 
 const StPostsItem = styled.li`
   position: relative;
-  width: 780px;
+  width: 750px;
   height: 210px;
   padding: 36px 0;
   box-sizing: border-box;
@@ -47,14 +47,18 @@ const PostsItemId = styled.span`
   color: rgb(102, 103, 171, 0.8);
 `;
 
-const PostsItemTitle = styled.h3`
-  width: 100%;
-  margin-bottom: 10px;
+const PostsItemTitle = styled.a`
+  width: 80%;
+  padding-bottom: 10px;
   font-family: "Noto Sans KR";
   font-style: normal;
   font-weight: 550;
   font-size: 16px;
   color: rgb(20, 22, 23);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 
   &:hover {
     color: rgb(102, 103, 171, 1);

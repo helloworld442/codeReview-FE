@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { device } from "../../../utils/media";
 
-export default function PostsItem({ post, index }) {
+export default function PostsItem({ post }) {
   return (
     <StPostsItem>
-      <PostsItemTitle>{post.title}</PostsItemTitle>
+      <PostsItemTitle href={"/post/" + post.id}>{post.title}</PostsItemTitle>
       <PostsItemContent>{post.question}</PostsItemContent>
       <PostsItemUser>
         <span></span>
@@ -21,7 +21,7 @@ export default function PostsItem({ post, index }) {
 
 const StPostsItem = styled.li`
   position: relative;
-  width: 780px;
+  width: 750px;
   height: 200px;
   padding: 36px 0;
   box-sizing: border-box;
@@ -32,7 +32,8 @@ const StPostsItem = styled.li`
   }
 `;
 
-const PostsItemTitle = styled.h3`
+const PostsItemTitle = styled.a`
+  display: inline-block;
   width: 100%;
   margin-bottom: 10px;
   font-family: "Noto Sans KR";

@@ -14,7 +14,7 @@ export default function PostsSection() {
 }
 
 const StPostsSection = styled.section`
-  width: 780px;
+  width: 750px;
 
   @media ${device.tablet} {
     width: 100%;

@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import { device } from "../../utils/media";
 
-export default function PostsTemplate({ children }) {
-  return <StPostsTemplate>{children}</StPostsTemplate>;
+export default function PostTemplate({ children }) {
+  return <StPostTemplate>{children}</StPostTemplate>;
 }
 
-const StPostsTemplate = styled.main`
-  width: 1024px;
+const StPostTemplate = styled.main`
+  width: 100%;
   margin-top: 36px;
   display: flex;
   justify-content: space-between;

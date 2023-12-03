@@ -8,6 +8,7 @@ import WritePage from "../pages/WritePage";
 import AuthLayout from "../layout/AuthLayout";
 import SignUpPage from "../pages/SignUpPage";
 import SignInPage from "../pages/SignInPage";
+import PostPage from "../pages/PostPage";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
         element: <SignUpPage />,
       },
     ],
+  },
+  {
+    path: "/post/:postId",
+    element: <PostPage />,
   },
   {
     path: "/posts/",

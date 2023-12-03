@@ -33,7 +33,7 @@ const StButton = styled.button`
     props.size === "large" &&
     css`
       width: 100%;
-      height: 58px;
+      height: 64px;
       border: none;
       border-radius: 8px;
       outline: none;

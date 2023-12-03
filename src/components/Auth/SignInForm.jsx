@@ -43,7 +43,7 @@ export default function SignInForm() {
 
 const SignInFormFieldSet = styled.fieldset`
   width: 450px;
-  height: 600px;
+  height: 650px;
   padding: 36px 0;
   display: flex;
   flex-direction: column;
