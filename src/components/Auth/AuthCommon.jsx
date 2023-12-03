@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../utils/media";
 
 const AuthInputBox = styled.div`
   position: relative;
@@ -62,4 +63,23 @@ const AuthInputButton = styled.button`
   }
 `;
 
-export { AuthInputBox, AuthInputLabel, AuthInput, AuthInputButton };
+const AuthTimer = styled.div`
+  height: 50px;
+  margin-left: 20px;
+  padding: 8px 14px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: rgb(254, 254, 254);
+  background: rgb(102, 103, 171, 0.8);
+  line-height: 35px;
+
+  @media ${device.tablet} {
+    margin-left: 0.5rem;
+  }
+`;
+
+export { AuthInputBox, AuthInputLabel, AuthInput, AuthInputButton, AuthTimer };

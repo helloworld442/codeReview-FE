@@ -4,6 +4,7 @@ import {
   AuthInputBox,
   AuthInputButton,
   AuthInputLabel,
+  AuthTimer,
 } from "./AuthCommon";
 import Button from "../@common/Button";
 import { device } from "../../utils/media";
@@ -36,6 +37,7 @@ export default function SignUpForm() {
               이메일 확인 <b>*</b>
             </AuthInputLabel>
             <AuthInput placeholder="이메일 확인코드를 입력하세요" />
+            <AuthTimer>00 : 00</AuthTimer>
             <AuthInputButton>확인하기</AuthInputButton>
           </AuthInputBox>
         </SignUpFormSection>

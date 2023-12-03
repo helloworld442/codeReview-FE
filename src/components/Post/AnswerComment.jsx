@@ -59,14 +59,14 @@ const AnswerCommentItem = styled.li`
   padding: 18px 12px;
   margin: 24px 0;
   box-sizing: border-box;
-  border: 2px solid #d7e0e6;
+  border-bottom: 1px solid #d7e0e6;
   border-radius: 6px;
 `;
 
 const CommentItemUser = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 24px;
+  margin-bottom: 30px;
 
   span {
     width: 30px;
@@ -115,7 +115,7 @@ const CommentItemCode = styled.pre`
 `;
 
 const CommentItemContent = styled.h3`
-  margin-top: 24px;
+  margin-top: 30px;
   font-size: 0.925rem;
   font-weight: 400;
   font-family: "Noto Sans KR";
@@ -124,7 +124,7 @@ const CommentItemContent = styled.h3`
 
 const CommentItemEllipsis = styled(Ellipsis)`
   position: absolute;
-  top: 18px;
+  top: 20px;
   right: 12px;
   width: 1.15rem;
   height: 1.15rem;

@@ -64,7 +64,7 @@ const QuestionPostTitle = styled.h3`
   margin-bottom: 36px;
   border-bottom: 2px solid #e8e8e8;
   font-size: 1.5rem;
-  font-weight: 650;
+  font-weight: 300;
   color: #333;
 `;
 
@@ -126,14 +126,14 @@ const QuestionPostDesc = styled.h5`
     margin-bottom: 14px;
     font-size: 1.4rem;
     font-weight: 300;
-    color: rgb(64, 58, 107, 0.8);
+    color: rgb(102, 103, 171, 0.8);
   }
   .question-problem,
   .question-question {
     margin-bottom: 24px;
     font-size: 1rem;
-    font-weight: 550;
-    font-family: Pretendard;
+    font-weight: 500;
+    font-family: "Noto Sans KR";
     line-height: 1.8rem;
   }
 
