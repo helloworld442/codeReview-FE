@@ -36,7 +36,7 @@ export default function PostsCategory() {
         <a>나의 활동</a>
       </PostsCategoryMenu>
 
-      <PostsCategoryButton>글 남기기</PostsCategoryButton>
+      <PostsCategoryButton href="/write">글 남기기</PostsCategoryButton>
     </StPostsCategory>
   );
 }
@@ -85,12 +85,12 @@ const PostsCategoryMenu = styled.ul`
   }
 `;
 
-const PostsCategoryButton = styled.button`
+const PostsCategoryButton = styled.a`
   display: inline-block;
   width: 100%;
   height: 52px;
   padding: 0px 18px;
-  margin: 24px 0;
+  margin: 36px 0;
   box-sizing: border-box;
   border: none;
   border-radius: 6px;
