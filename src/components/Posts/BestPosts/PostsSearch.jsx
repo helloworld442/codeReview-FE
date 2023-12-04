@@ -34,6 +34,7 @@ const PostsSearchInput = styled.input`
   width: 650px;
   border: none;
   outline: none;
+  margin-bottom: 2px;
   font-size: 0.975rem;
   font-weight: 400;
   font-family: "Noto Sans KR";

@@ -65,8 +65,6 @@ const StWriteForm = styled.form`
 
 const WriteFormButtons = styled.div`
   width: 100%;
-  padding: 48px 0;
-  box-sizing: border-box;
   display: flex;
   justify-content: flex-end;
   align-items: center;
