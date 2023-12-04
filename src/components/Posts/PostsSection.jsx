@@ -11,6 +11,15 @@ export default function PostsSection() {
         <h4 className="more">더보기</h4>
       </SectionBanner>
 
+      <SectionToggle>
+        <span className="active">
+          <b /> 최신순
+        </span>
+        <span>
+          <b /> 인기순
+        </span>
+      </SectionToggle>
+
       <PostsList />
     </StPostsSection>
   );
@@ -25,12 +34,14 @@ const StPostsSection = styled.section`
 `;
 
 const SectionBanner = styled.div`
+  position: relative;
   display: inline-block;
   width: 100%;
-  padding: 20px 16px;
+  padding: 22px 16px;
   box-sizing: border-box;
   border-radius: 0.5rem;
   display: flex;
+  align-items: center;
   gap: 8px;
   background: rgb(244, 244, 244);
 
@@ -49,9 +60,44 @@ const SectionBanner = styled.div`
   }
 
   .more {
-    font-size: 0.875rem;
+    position: absolute;
+    right: 16px;
+    font-size: 0.725rem;
     font-weight: 400;
     font-family: "Noto Sans KR";
     color: #333;
+  }
+`;
+
+const SectionToggle = styled.div`
+  position: relative;
+  top: 30px;
+  margin: 24px 0;
+  display: flex;
+
+  span {
+    margin-right: 10px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-family: "Noto Sans KR";
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+  }
+
+  b {
+    display: inline-block;
+    width: 0.35rem;
+    height: 0.35rem;
+    border-radius: 50%;
+    background: #d9d9d9;
+  }
+
+  .active {
+    b {
+      background: rgb(102, 103, 171, 0.8);
+    }
   }
 `;
