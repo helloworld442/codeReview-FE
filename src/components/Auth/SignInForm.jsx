@@ -10,7 +10,7 @@ export default function SignInForm() {
   const queryClient = useQueryClient();
   const [form, onChange, refresh] = useInput({ email: "", password: "" });
 
-  const authMutation = useMutation(loginUser, {
+  const loginMutation = useMutation(loginUser, {
     onSuccess: () => {
       queryClient.invalidateQueries("user");
     },
@@ -19,7 +19,7 @@ export default function SignInForm() {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    authMutation.mutate(form);
+    loginMutation.mutate(form);
 
     refresh();
   };
