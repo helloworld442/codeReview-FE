@@ -128,6 +128,7 @@ const CommentItemEllipsis = styled(Ellipsis)`
   right: 12px;
   width: 1.15rem;
   height: 1.15rem;
+  fill: rgb(102, 103, 171, 1);
 `;
 
 const CommentItemLike = styled.span`

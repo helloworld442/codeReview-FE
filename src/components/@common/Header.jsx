@@ -56,10 +56,6 @@ function usePathname(pathname) {
   if (pathname.includes("signup")) {
     return "홈  >  회원가입";
   }
-
-  if (pathname.includes("post")) {
-    return "홈  >  커뮤니티  >  상세페이지";
-  }
 }
 
 const StHeader = styled.header`

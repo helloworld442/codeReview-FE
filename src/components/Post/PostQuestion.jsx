@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import "highlight.js/styles/atom-one-light.min.css";
 import { ReactComponent as Heart } from "../../assets/heart-solid.svg";
+import { ReactComponent as Ellipsis } from "../../assets/ellipsis-vertical-solid.svg";
 import useHightlightCode from "../../hooks/useHightLightCode";
 
 const post = {
@@ -20,6 +21,17 @@ const PostQuestion = () => {
   return (
     <StQuestionPost>
       <QuestionPostTitle>{post.title}</QuestionPostTitle>
+
+      <QuestionPostEllipsis />
+
+      <QuestionPostView>
+        <h6>
+          추천 <span>1</span>
+        </h6>
+        <h6>
+          조회 <span>2</span>
+        </h6>
+      </QuestionPostView>
 
       <QuestionPostDesc>
         {post.code && (
@@ -56,16 +68,45 @@ const PostQuestion = () => {
 };
 
 const StQuestionPost = styled.div`
+  position: relative;
   width: 100%;
 `;
 
 const QuestionPostTitle = styled.h3`
-  padding-bottom: 14px;
+  font-size: 1.35rem;
+  font-weight: 700;
+  font-family: "Noto Sans KR";
+  color: #333;
+`;
+
+const QuestionPostEllipsis = styled(Ellipsis)`
+  position: absolute;
+  top: 2px;
+  right: 0;
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: rgb(102, 103, 171, 1);
+`;
+
+const QuestionPostView = styled.div`
+  padding: 20px 0;
   margin-bottom: 36px;
   border-bottom: 2px solid #e8e8e8;
-  font-size: 1.5rem;
-  font-weight: 300;
-  color: #333;
+  display: flex;
+  gap: 8px;
+
+  h6 {
+    font-size: 0.85rem;
+    font-weight: 400;
+    font-family: "Noto Sans KR";
+    color: rgb(157, 167, 174);
+  }
+
+  span {
+    display: inline-block;
+    margin-left: 2px;
+    color: rgb(102, 103, 171, 1);
+  }
 `;
 
 const QuestionPostDesc = styled.h5`
@@ -151,7 +192,7 @@ const QuestionPostInfo = styled.div`
   h5 {
     font-size: 0.85rem;
     font-weight: 500;
-    font-family: sans-serif;
+    font-family: "Noto Sans KR";
     color: #888;
   }
 
@@ -162,7 +203,7 @@ const QuestionPostInfo = styled.div`
     border-radius: 4px;
     display: flex;
     align-items: center;
-    font-family: sans-serif;
+    font-family: "Noto Sans KR";
     font-size: 0.95rem;
     color: #bbb;
     cursor: pointer;
