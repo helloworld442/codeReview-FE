@@ -1,47 +1,74 @@
-import { useFetcher } from "react-router-dom";
 import styled from "styled-components";
-import { AuthInput } from "./AuthCommon";
 import { device } from "../../utils/media";
+import { AuthInput } from "./AuthCommon";
 import Button from "../@common/Button";
+import useInput from "../../hooks/useInput";
+import { useMutation, useQueryClient } from "react-query";
+import { loginUser } from "../../apis/auth";
 
 export default function SignInForm() {
-  const fetcher = useFetcher();
+  const queryClient = useQueryClient();
+  const [form, onChange, refresh] = useInput({ email: "", password: "" });
+
+  const authMutation = useMutation(loginUser, {
+    onSuccess: () => {
+      queryClient.invalidateQueries("user");
+    },
+  });
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    authMutation.mutate(form);
+
+    refresh();
+  };
 
   return (
-    <fetcher.Form>
-      <SignInFormFieldSet>
-        <SignInFormHead>
-          <HeadTitle>
-            <span>로그인</span>
-            지금 로그인하시고
-            <br />
-            매력적인 질문을 던져보세요
-          </HeadTitle>
-        </SignInFormHead>
+    <StSignInForm onSubmit={onSubmit}>
+      <SignInFormHead>
+        <HeadTitle>
+          <span>로그인</span>
+          지금 로그인하시고
+          <br />
+          매력적인 질문을 던져보세요
+        </HeadTitle>
+      </SignInFormHead>
 
-        <SignInFormBox>
-          <SignInFormLabel>닉네임</SignInFormLabel>
-          <SignInFormInput placeholder="닉네임을 입력하세요" />
-        </SignInFormBox>
+      <SignInFormBox>
+        <SignInFormLabel>이메일</SignInFormLabel>
+        <SignInFormInput
+          type="email"
+          name="email"
+          value={form.email}
+          onChange={onChange}
+          placeholder="이메일을 입력하세요"
+        />
+      </SignInFormBox>
 
-        <SignInFormBox>
-          <SignInFormLabel>비밀번호</SignInFormLabel>
-          <SignInFormInput placeholder="비밀번호를 입력하세요" />
-        </SignInFormBox>
+      <SignInFormBox>
+        <SignInFormLabel>비밀번호</SignInFormLabel>
+        <SignInFormInput
+          type="password"
+          name="password"
+          value={form.password}
+          onChange={onChange}
+          placeholder="비밀번호를 입력하세요"
+        />
+      </SignInFormBox>
 
-        <Button size="large" text="로그인" />
+      <Button size="large" text="로그인" type="submit" />
 
-        <SignInFormLink>
-          <a>아이디 찾기</a>
-          <a>비밀번호 찾기</a>
-          <a href="/user/signup">회원가입</a>
-        </SignInFormLink>
-      </SignInFormFieldSet>
-    </fetcher.Form>
+      <SignInFormLink>
+        <a>아이디 찾기</a>
+        <a>비밀번호 찾기</a>
+        <a href="/user/signup">회원가입</a>
+      </SignInFormLink>
+    </StSignInForm>
   );
 }
 
-const SignInFormFieldSet = styled.fieldset`
+const StSignInForm = styled.form`
   width: 450px;
   height: 650px;
   padding: 36px 0;

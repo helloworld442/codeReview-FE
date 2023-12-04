@@ -34,10 +34,11 @@ const PostsSearchInput = styled.input`
   width: 650px;
   border: none;
   outline: none;
-  font-size: 1.05rem;
-  font-weight: 500;
+  font-size: 0.975rem;
+  font-weight: 400;
   font-family: "Noto Sans KR";
   color: #333;
+  line-height: 50px;
 
   &::placeholder {
     color: rgb(157, 167, 174);

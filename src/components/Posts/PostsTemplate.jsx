@@ -6,8 +6,8 @@ export default function PostsTemplate({ children }) {
 }
 
 const StPostsTemplate = styled.main`
-  width: 1024px;
-  margin-top: 36px;
+  width: 970px;
+  margin-top: 24px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;

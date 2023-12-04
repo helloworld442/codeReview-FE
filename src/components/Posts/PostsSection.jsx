@@ -5,8 +5,11 @@ import PostsList from "./PostsList";
 export default function PostsSection() {
   return (
     <StPostsSection>
-      <SectionTitle>전체</SectionTitle>
-      <SectionDesc>개발자들 사이에서 유행인 글들입니다.</SectionDesc>
+      <SectionBanner>
+        <span className="notice">공지</span>
+        <h4 className="title">별무리 이벤트 증정 시작! 12.9 ~ 12.14</h4>
+        <h4 className="more">더보기</h4>
+      </SectionBanner>
 
       <PostsList />
     </StPostsSection>
@@ -14,25 +17,41 @@ export default function PostsSection() {
 }
 
 const StPostsSection = styled.section`
-  width: 750px;
+  width: 720px;
 
   @media ${device.tablet} {
     width: 100%;
   }
 `;
 
-const SectionTitle = styled.h3`
-  margin-bottom: 12px;
-  font-size: 1.45rem;
-  font-weight: 550;
-  font-style: normal;
-  font-family: "Noto Sans KR";
-`;
+const SectionBanner = styled.div`
+  display: inline-block;
+  width: 100%;
+  padding: 20px 16px;
+  box-sizing: border-box;
+  border-radius: 0.5rem;
+  display: flex;
+  gap: 8px;
+  background: rgb(244, 244, 244);
 
-const SectionDesc = styled.h4`
-  font-size: 0.925rem;
-  font-weight: 500;
-  font-style: normal;
-  font-family: "Noto Sans KR";
-  color: #9da7ae;
+  .notice {
+    font-size: 0.875rem;
+    font-weight: 650;
+    font-family: "Noto Sans KR";
+    color: #333;
+  }
+
+  .title {
+    font-size: 0.875rem;
+    font-weight: 400;
+    font-family: "Noto Sans KR";
+    color: #333;
+  }
+
+  .more {
+    font-size: 0.875rem;
+    font-weight: 400;
+    font-family: "Noto Sans KR";
+    color: #333;
+  }
 `;

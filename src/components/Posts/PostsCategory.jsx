@@ -35,6 +35,8 @@ export default function PostsCategory() {
         </a>
         <a>나의 활동</a>
       </PostsCategoryMenu>
+
+      <PostsCategoryButton>글 남기기</PostsCategoryButton>
     </StPostsCategory>
   );
 }
@@ -80,5 +82,29 @@ const PostsCategoryMenu = styled.ul`
     font-weight: 650;
     background: rgb(242, 246, 248);
     color: rgb(20, 22, 23);
+  }
+`;
+
+const PostsCategoryButton = styled.button`
+  display: inline-block;
+  width: 100%;
+  height: 52px;
+  padding: 0px 18px;
+  margin: 24px 0;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 6px;
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 650;
+  color: #fff;
+  background: rgb(102, 103, 171, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media ${device.tablet} {
+    display: none;
   }
 `;

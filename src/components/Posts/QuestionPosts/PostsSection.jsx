@@ -19,7 +19,7 @@ export default function PostsSection() {
 }
 
 const StPostsSection = styled.section`
-  width: 750px;
+  width: 720px;
 
   @media ${device.tablet} {
     width: 100%;
@@ -35,8 +35,8 @@ const SectionTitle = styled.h3`
 `;
 
 const SectionDesc = styled.h4`
-  font-size: 0.925rem;
-  font-weight: 500;
+  font-size: 0.85rem;
+  font-weight: 400;
   font-style: normal;
   font-family: "Noto Sans KR";
   color: #9da7ae;

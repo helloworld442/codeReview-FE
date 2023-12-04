@@ -6,7 +6,7 @@ export default function WriteTemplate({ children }) {
 }
 
 const StWriteTemplate = styled.main`
-  width: 800px;
+  width: 730px;
   margin: 14px 0;
   display: flex;
   flex-direction: column;

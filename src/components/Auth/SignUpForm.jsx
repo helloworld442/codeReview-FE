@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../utils/media";
 import {
   AuthInput,
   AuthInputBox,
@@ -7,7 +8,6 @@ import {
   AuthTimer,
 } from "./AuthCommon";
 import Button from "../@common/Button";
-import { device } from "../../utils/media";
 
 export default function SignUpForm() {
   return (
