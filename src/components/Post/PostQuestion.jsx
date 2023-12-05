@@ -82,7 +82,7 @@ const PostQuestion = () => {
         <h5>2022.09.21</h5>
         <span onClick={onClickHeartButton}>
           <Heart />
-          좋아요 0
+          좋아요 {data.heartCount}
         </span>
       </QuestionPostInfo>
     </StQuestionPost>
