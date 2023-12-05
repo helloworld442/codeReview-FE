@@ -9,7 +9,6 @@ import { getReview } from "../../apis/review";
 
 const PostQuestion = () => {
   const { postId } = useParams();
-  const hightlightedCode = useHightlightCode(data.code);
   const { isLoading, isError, data } = useQuery(
     ["review", postId],
     () => getReview(postId),
@@ -24,6 +23,8 @@ const PostQuestion = () => {
   if (isLoading) return <div>asdf</div>;
 
   if (isError) return <div>asdf</div>;
+
+  const hightlightedCode = useHightlightCode(data.code);
 
   return (
     <StQuestionPost>
