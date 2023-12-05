@@ -21,6 +21,10 @@ const PostQuestion = () => {
     }
   );
 
+  if (isLoading) return <div>asdf</div>;
+
+  if (isError) return <div>asdf</div>;
+
   return (
     <StQuestionPost>
       <QuestionPostTitle>{data.title}</QuestionPostTitle>
