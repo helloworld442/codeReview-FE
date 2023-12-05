@@ -33,10 +33,10 @@ const PostQuestion = () => {
 
       <QuestionPostView>
         <h6>
-          추천 <span>1</span>
+          추천 <span>{data.heartCount}</span>
         </h6>
         <h6>
-          조회 <span>2</span>
+          조회 <span>{data.views}</span>
         </h6>
       </QuestionPostView>
 
