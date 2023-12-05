@@ -65,7 +65,7 @@ const AuthInputButton = styled.button`
 
 const AuthTimer = styled.div`
   height: 50px;
-  margin-left: 20px;
+  margin-left: 1.4vw;
   padding: 8px 14px;
   border: none;
   outline: none;

@@ -206,7 +206,7 @@ const QuestionPostDesc = styled.h5`
 `;
 
 const QuestionPostInfo = styled.div`
-  margin-top: 72px;
+  margin-top: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
