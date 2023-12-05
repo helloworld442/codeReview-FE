@@ -9,7 +9,7 @@ export default function PostsItem({ post }) {
       <PostsItemUser>
         <span></span>
         <h4>김민승</h4>
-        <h5>2023.08.12</h5>
+        <h5>{new Date(post.createdAt).toLocaleDateString("ko-KR")}</h5>
       </PostsItemUser>
       <PostsItemInfo>
         <h6>
