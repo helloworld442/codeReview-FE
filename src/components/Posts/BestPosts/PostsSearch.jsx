@@ -14,7 +14,7 @@ const PostsSearchForm = styled.form`
   width: 100%;
   height: 64px;
   padding: 0 18px;
-  margin: 36px 0;
+  margin: 24px 0;
   box-sizing: border-box;
   border-radius: 8px;
   border: 1px solid #d7e0e6;

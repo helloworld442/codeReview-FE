@@ -8,9 +8,7 @@ export default function PostUser() {
         <span className="thumnail"></span>
         <div className="info">
           <h4 className="name">김민승</h4>
-          <h4 className="rank">
-            Skill : <span>Javscript , React</span>
-          </h4>
+          <h4 className="rank">Javscript , React</h4>
         </div>
       </PostUserProfile>
     </StPostUser>
@@ -58,9 +56,6 @@ const PostUserProfile = styled.div`
     font-size: 0.825rem;
     font-weight: 600;
     font-family: "Noto Sans KR";
-
-    span {
-      color: rgb(102, 103, 171, 0.8);
-    }
+    color: rgb(102, 103, 171, 0.8);
   }
 `;
