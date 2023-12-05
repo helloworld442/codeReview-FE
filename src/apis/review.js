@@ -5,4 +5,9 @@ const getReviews = async () => {
   return response.data;
 };
 
-export { getReviews };
+const createReview = async (req) => {
+  const response = await api.post("/codeReview", req);
+  return response.data;
+};
+
+export { getReviews, createReview };

@@ -5,17 +5,35 @@ import TextAreaField from "./TextAreaField";
 import Button from "../@common/Button";
 import useInput from "../../hooks/useInput";
 import "highlight.js/styles/atom-one-light.min.css";
+import { useMutation, useQueryClient } from "react-query";
+import { createReview } from "../../apis/review";
 
 export default function WriteForm() {
+  const queryClient = useQueryClient();
   const [form, onChange, refresh] = useInput({
     title: "",
     code: "",
     problem: "",
     question: "",
+    category: ["spring", "java"],
   });
 
+  const writeMutation = useMutation(createReview, {
+    onSuccess: () => {
+      queryClient.invalidateQueries("reviews");
+    },
+  });
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    writeMutation.mutate(form);
+
+    refresh();
+  };
+
   return (
-    <StWriteForm>
+    <StWriteForm onSubmit={onSubmit}>
       <InputField
         label="제목"
         name="title"
