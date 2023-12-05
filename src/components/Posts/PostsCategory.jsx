@@ -43,6 +43,7 @@ export default function PostsCategory() {
 
 const StPostsCategory = styled.div`
   width: 200px;
+  float: left;
 
   @media ${device.tablet} {
     width: 100%;

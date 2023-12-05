@@ -20,6 +20,7 @@ export default function PostsSection() {
 
 const StPostsSection = styled.section`
   width: 720px;
+  float: right;
 
   @media ${device.tablet} {
     width: 100%;
