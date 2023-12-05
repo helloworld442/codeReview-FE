@@ -79,7 +79,7 @@ const PostQuestion = () => {
         <pre className="question-question">{data.question}</pre>
       </QuestionPostDesc>
       <QuestionPostInfo>
-        <h5>2022.09.21</h5>
+        <h5>{new Date(data.createdAt).toLocaleDateString("ko-KR")}</h5>
         <span onClick={onClickHeartButton}>
           <Heart />
           좋아요 {data.heartCount}
