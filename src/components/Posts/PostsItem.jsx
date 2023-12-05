@@ -13,10 +13,10 @@ export default function PostsItem({ post }) {
       </PostsItemUser>
       <PostsItemInfo>
         <h6>
-          추천 <span>1</span>
+          추천 <span>{post.heartCount}</span>
         </h6>
         <h6>
-          조회 <span>2</span>
+          조회 <span>{post.views}</span>
         </h6>
       </PostsItemInfo>
     </StPostsItem>
