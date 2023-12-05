@@ -4,11 +4,7 @@ import { useQuery } from "react-query";
 import { getReviews } from "../../apis/review";
 
 export default function PostsList() {
-  const {
-    isLoading,
-    isError,
-    data: posts,
-  } = useQuery("reviews", getReviews, {
+  const { isLoading, isError, data } = useQuery("reviews", getReviews, {
     retry: 0,
     refetchOnWindowFocus: false,
     staleTime: 5 * 60 * 1000,
@@ -21,7 +17,7 @@ export default function PostsList() {
 
   return (
     <StPostList>
-      {posts.map((post) => (
+      {data.content.map((post) => (
         <PostsItem key={post.id} post={post} />
       ))}
     </StPostList>
