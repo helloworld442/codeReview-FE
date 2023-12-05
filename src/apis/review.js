@@ -15,4 +15,10 @@ const createReview = async (req) => {
   return response.data;
 };
 
-export { getReviews, getReview, createReview };
+const createHeart = async (req) => {
+  const response = await api.post("/heart/codeReview/" + req);
+
+  return response.data;
+};
+
+export { getReviews, getReview, createReview, createHeart };

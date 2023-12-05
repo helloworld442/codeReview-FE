@@ -3,12 +3,14 @@ import "highlight.js/styles/atom-one-light.min.css";
 import { ReactComponent as Heart } from "../../assets/heart-solid.svg";
 import { ReactComponent as Ellipsis } from "../../assets/ellipsis-vertical-solid.svg";
 import useHightlightCode from "../../hooks/useHightLightCode";
-import { useQuery } from "react-query";
+import { useMutation, useQuery, useQueryClient } from "react-query";
 import { useParams } from "react-router-dom";
-import { getReview } from "../../apis/review";
+import { createHeart, getReview } from "../../apis/review";
 
 const PostQuestion = () => {
   const { postId } = useParams();
+  const queryClient = useQueryClient();
+
   const { isLoading, isError, data } = useQuery(
     ["review", postId],
     () => getReview(postId),
@@ -19,7 +21,20 @@ const PostQuestion = () => {
       cacheTime: 60 * 60 * 1000,
     }
   );
+
+  const heartMutation = useMutation(createHeart, {
+    onSuccess: () => {
+      queryClient.invalidateQueries(["review", postId]);
+    },
+  });
+
   const hightlightedCode = useHightlightCode(data?.code || "");
+
+  const onClickHeartButton = (e) => {
+    e.preventDefault();
+
+    heartMutation.mutate(postId);
+  };
 
   if (isLoading) return <div>asdf</div>;
 
@@ -65,7 +80,7 @@ const PostQuestion = () => {
       </QuestionPostDesc>
       <QuestionPostInfo>
         <h5>2022.09.21</h5>
-        <span>
+        <span onClick={onClickHeartButton}>
           <Heart />
           좋아요 0
         </span>
