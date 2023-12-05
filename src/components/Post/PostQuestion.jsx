@@ -19,12 +19,11 @@ const PostQuestion = () => {
       cacheTime: 60 * 60 * 1000,
     }
   );
+  const hightlightedCode = useHightlightCode(data?.code || "");
 
   if (isLoading) return <div>asdf</div>;
 
   if (isError) return <div>asdf</div>;
-
-  const hightlightedCode = useHightlightCode(data.code);
 
   return (
     <StQuestionPost>
