@@ -8,7 +8,7 @@ export default function PostsItem({ post }) {
       <PostsItemContent>{post.question}</PostsItemContent>
       <PostsItemUser>
         <span></span>
-        <h4>김민승</h4>
+        <h4>{post.nickname}</h4>
         <h5>{new Date(post.createdAt).toLocaleDateString("ko-KR")}</h5>
       </PostsItemUser>
       <PostsItemInfo>
