@@ -3,24 +3,27 @@ import "highlight.js/styles/atom-one-light.min.css";
 import { ReactComponent as Heart } from "../../assets/heart-solid.svg";
 import { ReactComponent as Ellipsis } from "../../assets/ellipsis-vertical-solid.svg";
 import useHightlightCode from "../../hooks/useHightLightCode";
-
-const post = {
-  category: "Javascript",
-  code: "//s의 길이만큼 반복하면서 다음 과정을 수행한다.\n//index의 길이만큼 반복하면서 다음 과정을 수행한다.\n//만약 skip에 해당 단어가 있다면 index를 올리지 않는다.\n//만약 skip에 해당 단어가 없다면 index를 올린다.\n//index만큼 뒤에 있는 알파벳을 answer에 더한다.\n//answer를 리턴한다.\n\nfunction solution(s, skip, index) {\n    var answer = '';\n    let alpha = \"abcdefghijklmnopqrstuvwxyz\";\n    for(let i = 0; i < s.length; i++) {\n        let j = 0;\n        let k = alpha.indexOf(s[i])\n        while (j < index) {\n            if(!skip.includes(alpha[(k+1) % 26])) {\n                j++;\n            }\n            k += 1;\n        }\n        k = k % 26\n        answer += alpha[k]\n    }\n    \n    return answer;\n}",
-  title: "[Example 1] 자바스크립트 알고리즘 문의 ",
-  problem:
-    "[Example 1] 자바스크립트 알고리즘 문의\n[Example 1] 자바스크립트 알고리즘 문의\n[Example 1] 자바스크립트 알고리즘 문의",
-  question:
-    "[Example 1] 자바스크립트 알고리즘 문의\n[Example 1] 자바스크립트 알고리즘 문의\n[Example 1] 자바스크립트 알고리즘 문의",
-  id: 11,
-};
+import { useQuery } from "react-query";
+import { useParams } from "react-router-dom";
+import { getReview } from "../../apis/review";
 
 const PostQuestion = () => {
-  const hightlightedCode = useHightlightCode(post.code);
+  const { postId } = useParams();
+  const hightlightedCode = useHightlightCode(data.code);
+  const { isLoading, isError, data } = useQuery(
+    ["review", postId],
+    () => getReview(postId),
+    {
+      retry: 0,
+      refetchOnWindowFocus: false,
+      staleTime: 5 * 60 * 1000,
+      cacheTime: 60 * 60 * 1000,
+    }
+  );
 
   return (
     <StQuestionPost>
-      <QuestionPostTitle>{post.title}</QuestionPostTitle>
+      <QuestionPostTitle>{data.title}</QuestionPostTitle>
 
       <QuestionPostEllipsis />
 
@@ -34,10 +37,10 @@ const PostQuestion = () => {
       </QuestionPostView>
 
       <QuestionPostDesc>
-        {post.code && (
+        {data.code && (
           <div className="question-code">
             <ul className="code-number">
-              {post.code.split("\n")?.map((_, i) => (
+              {data.code.split("\n")?.map((_, i) => (
                 <li key={i}>{i + 1}</li>
               ))}
             </ul>
@@ -50,11 +53,11 @@ const PostQuestion = () => {
 
       <QuestionPostDesc>
         <span className="question-category">문제상황</span>
-        <pre className="question-problem">{post.problem}</pre>
+        <pre className="question-problem">{data.problem}</pre>
       </QuestionPostDesc>
       <QuestionPostDesc>
         <span className="question-category">궁금한점</span>
-        <pre className="question-question">{post.question}</pre>
+        <pre className="question-question">{data.question}</pre>
       </QuestionPostDesc>
       <QuestionPostInfo>
         <h5>2022.09.21</h5>
