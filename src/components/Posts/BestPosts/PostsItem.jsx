@@ -4,10 +4,8 @@ import { device } from "../../../utils/media";
 export default function PostsItem({ post, index }) {
   return (
     <StPostsItem>
-      <PostsItemTitle href={"/post/" + post.id}>
-        <PostsItemId>{index + 1}</PostsItemId>
-        {post.title}
-      </PostsItemTitle>
+      <PostsItemId>{index + 1}</PostsItemId>
+      <PostsItemTitle href={"/post/" + post.id}>{post.title}</PostsItemTitle>
       <PostsItemContent>{post.question}</PostsItemContent>
       <PostsItemUser>
         <span></span>
@@ -40,10 +38,12 @@ const StPostsItem = styled.li`
 `;
 
 const PostsItemId = styled.span`
-  margin-top: 6px;
-  font-size: 1.8rem;
+  float: left;
+  position: relative;
+  top: -3px;
+  margin-right: 12px;
+  font-size: 30px;
   font-weight: 300;
-  font-family: Jua;
   color: rgb(102, 103, 171, 0.8);
 `;
 
@@ -55,12 +55,10 @@ const PostsItemTitle = styled.a`
   font-weight: 550;
   font-size: 16px;
   color: rgb(20, 22, 23);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  gap: 12px;
 
   &:hover {
     color: rgb(102, 103, 171, 1);
