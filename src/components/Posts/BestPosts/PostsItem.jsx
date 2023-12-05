@@ -41,9 +41,8 @@ const PostsItemId = styled.span`
   float: left;
   position: relative;
   top: -3px;
-  padding-right: 12px;
-  box-sizing: border-box;
-  font-size: 30px;
+  margin-right: 12px;
+  font-size: 2rem;
   font-weight: 300;
   color: rgb(102, 103, 171, 0.8);
 `;
