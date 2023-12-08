@@ -1,6 +1,6 @@
 import PostDetail from "../components/Post/PostDetail";
+import PostASide from "../components/Post/PostASide";
 import PostTemplate from "../components/Post/PostTemplate";
-import PostUser from "../components/Post/PostUser";
 import PostLayout from "../layout/PostLayout";
 
 export default function PostPage() {
@@ -8,7 +8,7 @@ export default function PostPage() {
     <PostLayout>
       <PostTemplate>
         <PostDetail />
-        <PostUser />
+        <PostASide />
       </PostTemplate>
     </PostLayout>
   );

@@ -149,4 +149,5 @@ const SectionTitle = styled.h3`
   margin-bottom: 12px;
   font-size: 1.35rem;
   text-align: left;
+  color: #333;
 `;

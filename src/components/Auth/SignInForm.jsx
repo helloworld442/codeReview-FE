@@ -7,8 +7,9 @@ import { useMutation, useQueryClient } from "react-query";
 import { loginUser } from "../../apis/auth";
 
 export default function SignInForm() {
-  const queryClient = useQueryClient();
   const [form, onChange, refresh] = useInput({ email: "", password: "" });
+
+  const queryClient = useQueryClient();
 
   const loginMutation = useMutation(loginUser, {
     onSuccess: () => {

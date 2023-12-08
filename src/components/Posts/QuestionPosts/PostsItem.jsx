@@ -21,7 +21,7 @@ export default function PostsItem({ post }) {
 
 const StPostsItem = styled.li`
   position: relative;
-  width: 720px;
+  width: 725px;
   height: 200px;
   padding: 36px 0;
   box-sizing: border-box;

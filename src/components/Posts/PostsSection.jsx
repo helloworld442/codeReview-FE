@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { device } from "../../utils/media";
 import PostsList from "./PostsList";
+import { Suspense } from "react";
 
 export default function PostsSection() {
   return (
@@ -20,13 +21,15 @@ export default function PostsSection() {
         </span>
       </SectionToggle>
 
-      <PostsList />
+      <Suspense fallback={<div>asdf</div>}>
+        <PostsList />
+      </Suspense>
     </StPostsSection>
   );
 }
 
 const StPostsSection = styled.section`
-  width: 720px;
+  width: 725px;
   float: right;
 
   @media ${device.tablet} {

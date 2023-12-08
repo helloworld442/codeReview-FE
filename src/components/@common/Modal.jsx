@@ -5,9 +5,13 @@ const ModalContext = createContext(null);
 export function ModalProvider({ children }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const onOpenModal = () => setIsOpen(true);
+  const onOpenModal = () => {
+    setIsOpen(true);
+  };
 
-  const onCloseModal = () => setIsOpen(false);
+  const onCloseModal = () => {
+    setIsOpen(false);
+  };
 
   return (
     <ModalContext.Provider value={{ isOpen, onOpenModal, onCloseModal }}>
@@ -17,7 +21,7 @@ export function ModalProvider({ children }) {
 }
 
 export function ModalTrigger({ trigger }) {
-  const { onOpenModal } = useContext(ModalContent);
+  const { onOpenModal } = useContext(ModalContext);
 
   return (
     <div className="modal-trigger" onClick={onOpenModal}>
@@ -27,31 +31,25 @@ export function ModalTrigger({ trigger }) {
 }
 
 export function ModalOverLay() {
-  const { isOpen, onCloseModal } = useContext(ModalContent);
+  const { onCloseModal, isOpen } = useContext(ModalContext);
 
   return isOpen && <div className="modal-overlay" onClick={onCloseModal} />;
 }
 
-export function ModalMenu({ items }) {
-  const { isOpen } = useContext(ModalContent);
+export function ModalClose({ trigger, onTrigger }) {
+  const { isOpen, onCloseModal } = useContext(ModalContext);
 
   return (
     isOpen && (
-      <ul className="modal-menu">
-        {items.map((item) => (
-          <ModalItem key={item} item={item} />
-        ))}
-      </ul>
+      <div
+        className="modal-close"
+        onClick={(e) => {
+          onTrigger(e);
+          onCloseModal();
+        }}
+      >
+        {trigger}
+      </div>
     )
-  );
-}
-
-export function ModalItem({ item }) {
-  const { onCloseModal } = useContext(ModalContent);
-
-  return (
-    <li className="modal-item" onClick={onCloseModal}>
-      {item}
-    </li>
   );
 }

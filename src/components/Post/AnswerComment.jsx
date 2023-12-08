@@ -117,7 +117,7 @@ const CommentItemCode = styled.pre`
 const CommentItemContent = styled.h3`
   margin-top: 30px;
   font-size: 0.925rem;
-  font-weight: 400;
+  font-weight: 500;
   font-family: "Noto Sans KR";
   color: #444;
 `;

@@ -15,10 +15,27 @@ const createReview = async (req) => {
   return response.data;
 };
 
+const updateReview = async ({ postId, req }) => {
+  const response = await api.put("/codeReview/" + postId, req);
+  return response.data;
+};
+
+const deleteReview = async (req) => {
+  const response = await api.delete("/codeReview/" + req);
+  return response.data;
+};
+
 const createHeart = async (req) => {
   const response = await api.post("/heart/codeReview/" + req);
 
   return response.data;
 };
 
-export { getReviews, getReview, createReview, createHeart };
+export {
+  getReviews,
+  getReview,
+  createReview,
+  updateReview,
+  deleteReview,
+  createHeart,
+};

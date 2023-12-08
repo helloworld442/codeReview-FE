@@ -11,7 +11,6 @@ const StPostTemplate = styled.main`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 65px;
 
   @media ${device.tablet} {
     width: 100%;

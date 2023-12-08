@@ -3,6 +3,7 @@ import axios from "axios";
 const instance = axios.create({
   baseURL: "https://ananbada.store:8080/api",
   withCredentials: true,
+  // baseURL: "http://localhost:3001",
 });
 
 instance.interceptors.request.use(

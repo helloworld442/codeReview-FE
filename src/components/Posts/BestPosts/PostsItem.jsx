@@ -26,7 +26,7 @@ export default function PostsItem({ post, index }) {
 
 const StPostsItem = styled.li`
   position: relative;
-  width: 720px;
+  width: 725px;
   height: 210px;
   padding: 36px 0;
   box-sizing: border-box;
@@ -40,8 +40,9 @@ const StPostsItem = styled.li`
 const PostsItemId = styled.span`
   float: left;
   position: relative;
+  left: 4px;
   top: -3px;
-  margin-right: 12px;
+  margin-right: 16px;
   font-size: 2rem;
   font-weight: 300;
   color: rgb(102, 103, 171, 0.8);
