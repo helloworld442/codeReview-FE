@@ -13,7 +13,7 @@ export default function PostsList() {
 
   return (
     <StPostList>
-      {data.map((post, index) => (
+      {data.content.map((post, index) => (
         <PostsItem key={post.id} post={post} index={index} />
       ))}
     </StPostList>
