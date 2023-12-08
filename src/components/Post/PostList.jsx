@@ -15,7 +15,7 @@ export default function PostList() {
   return (
     <StPostList>
       <PostListTitle>추천 게시글</PostListTitle>
-      {data.map((post) => (
+      {data.content.map((post) => (
         <PostItem key={post.id} post={post} />
       ))}
     </StPostList>
