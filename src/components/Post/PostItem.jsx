@@ -5,7 +5,7 @@ import { device } from "../../utils/media";
 export default function PostItem({ post }) {
   return (
     <StPostItem>
-      <Link to={"/post/" + post.id}>
+      <a href={"/post/" + post.id}>
         <PostItemTitle>{post.title}</PostItemTitle>
         <PostItemDesc>{post.problem}</PostItemDesc>
         <PostItemUser>
@@ -20,7 +20,7 @@ export default function PostItem({ post }) {
             조회 <span>2</span>
           </h6>
         </PostItemInfo>
-      </Link>
+      </a>
     </StPostItem>
   );
 }
