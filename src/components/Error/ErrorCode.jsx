@@ -1,9 +1,15 @@
 import { useRouteError } from "react-router-dom";
+import styled from "styled-components";
 
 export default function ErrorCode() {
-  const error = useRouteError();
+  const { response } = useRouteError();
 
-  console.log(error);
-
-  return <div>404</div>;
+  return <StErrorCode>{response.status}</StErrorCode>;
 }
+
+const StErrorCode = styled.div`
+  font-size: 4.5rem;
+  font-weight: bold;
+  font-family: "Noto Sans KR";
+  color: #333;
+`;
