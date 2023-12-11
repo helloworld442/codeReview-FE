@@ -11,6 +11,7 @@ import SignUpPage from "../pages/SignUpPage";
 import SignInPage from "../pages/SignInPage";
 import PostPage from "../pages/PostPage";
 import ErrorPage from "../pages/ErrorPage";
+import NotFoundPage from "../pages/NotFoundPage";
 
 const router = createBrowserRouter([
   {
@@ -68,7 +69,7 @@ const router = createBrowserRouter([
   },
   {
     path: "*",
-    element: <ErrorPage />,
+    element: <NotFoundPage />,
   },
 ]);
 

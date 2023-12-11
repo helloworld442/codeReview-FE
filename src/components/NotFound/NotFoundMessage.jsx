@@ -2,14 +2,12 @@ import { useRouteError } from "react-router-dom";
 import styled from "styled-components";
 
 export default function NotFoundMessage() {
-  const { response } = useRouteError();
-
   return (
     <StNotFoundMessage>
+      <NotFoundMessageCode>404</NotFoundMessageCode>
       <NotFoundMessageTitle>Page Not Found</NotFoundMessageTitle>
       <NotFoundMessageDesc>
-        {response?.data ||
-          `We're sorry, the page you requested\ncould not be found Please go back\nto the homepage`}
+        {`We're sorry, the page you requested\ncould not be found Please go back\nto the homepage`}
       </NotFoundMessageDesc>
       <NotFoundMessageLink href="/category">Home Page</NotFoundMessageLink>
     </StNotFoundMessage>
@@ -18,6 +16,14 @@ export default function NotFoundMessage() {
 
 const StNotFoundMessage = styled.div`
   margin: 10px 0;
+  float: right;
+`;
+
+const NotFoundMessageCode = styled.h3`
+  font-size: 5rem;
+  font-weight: bold;
+  font-family: "Noto Sans KR";
+  color: #333;
 `;
 
 const NotFoundMessageTitle = styled.h3`
