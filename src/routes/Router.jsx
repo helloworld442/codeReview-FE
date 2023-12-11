@@ -38,11 +38,11 @@ const router = createBrowserRouter([
   {
     path: "/post/",
     element: <PostLayout />,
+    errorElement: <div>asdf</div>,
     children: [
       {
         path: ":postId",
         element: <PostPage />,
-        errorElement: <div>asdf</div>,
       },
     ],
   },
