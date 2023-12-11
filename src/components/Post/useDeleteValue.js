@@ -9,6 +9,7 @@ export default function useDeleteValue() {
   const deleteMutation = useMutation(deleteReview, {
     onSuccess: () => {
       queryClient.invalidateQueries("reviews");
+      window.history.back();
     },
   });
 
