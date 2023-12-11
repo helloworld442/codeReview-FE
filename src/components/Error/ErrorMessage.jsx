@@ -25,13 +25,14 @@ const StErrorMessage = styled.div`
 `;
 
 const ErrorMessageTitle = styled.h3`
+  margin-bottom: 36px;
   font-size: 1.4rem;
   font-weight: bold;
   font-family: "Noto Sans KR";
   color: #333;
 `;
 
-const ErrorMessageDesc = styled.h5`
+const ErrorMessageDesc = styled.pre`
   font-size: 0.875rem;
   font-weight: 400;
   font-family: "Noto Sans KR";
