@@ -6,7 +6,7 @@ export default function ErrorIcon() {
 }
 
 const StErrorIcon = styled(Error)`
-  width: 8rem;
-  height: 8rem;
+  width: 12rem;
+  height: 12rem;
   fill: #red;
 `;
