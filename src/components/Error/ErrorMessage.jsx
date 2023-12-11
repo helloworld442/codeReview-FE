@@ -9,11 +9,7 @@ export default function ErrorMessage() {
       <ErrorMessageTitle>Page Not Found</ErrorMessageTitle>
       <ErrorMessageDesc>
         {response.data ||
-          `We're sorry, the page you requested
-        \n
-        could not be found Please go back
-        \n
-        to the homepage`}
+          `We're sorry, the page you requested\ncould not be found Please go back\nto the homepage`}
       </ErrorMessageDesc>
       <ErrorMessageLink>Home Page</ErrorMessageLink>
     </StErrorMessage>
