@@ -7,7 +7,7 @@ export default function ErrorTemplate({ children }) {
 const StErrorTemplate = styled.div`
   position: absolute;
   top: 50%;
-  width: 900px;
+  width: 800px;
   height: 300px;
   margin: 144px 0;
 `;
