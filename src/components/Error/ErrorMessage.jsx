@@ -30,7 +30,7 @@ const ErrorMessageTitle = styled.h3`
 
 const ErrorMessageDesc = styled.pre`
   line-height: 1.4rem;
-  font-size: 0.975rem;
+  font-size: 0.875rem;
   font-weight: 400;
   font-family: "Noto Sans KR";
   color: #333;
