@@ -8,5 +8,5 @@ export default function ErrorIcon() {
 const StErrorIcon = styled(Error)`
   width: 18rem;
   height: 18rem;
-  fill: red;
+  fill: #db4455;
 `;
