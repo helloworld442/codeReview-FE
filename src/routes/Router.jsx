@@ -66,6 +66,10 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "*",
+    errorElement: <ErrorPage />,
+  },
 ]);
 
 export default function Router() {
