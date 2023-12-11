@@ -21,7 +21,7 @@ const StErrorMessage = styled.div`
 `;
 
 const ErrorMessageTitle = styled.h3`
-  margin-bottom: 36px;
+  margin-bottom: 30px;
   font-size: 1.4rem;
   font-weight: bold;
   font-family: "Noto Sans KR";
