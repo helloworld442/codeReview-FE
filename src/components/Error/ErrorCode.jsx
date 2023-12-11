@@ -4,7 +4,7 @@ import styled from "styled-components";
 export default function ErrorCode() {
   const { response } = useRouteError();
 
-  return <StErrorCode>{response.status}</StErrorCode>;
+  return <StErrorCode>{response?.status || 404}</StErrorCode>;
 }
 
 const StErrorCode = styled.div`

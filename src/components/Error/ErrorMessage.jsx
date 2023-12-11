@@ -8,7 +8,7 @@ export default function ErrorMessage() {
     <StErrorMessage>
       <ErrorMessageTitle>Page Not Found</ErrorMessageTitle>
       <ErrorMessageDesc>
-        {response.data ||
+        {response?.data ||
           `We're sorry, the page you requested\ncould not be found Please go back\nto the homepage`}
       </ErrorMessageDesc>
       <ErrorMessageLink href="/category">Home Page</ErrorMessageLink>
