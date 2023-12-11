@@ -42,6 +42,7 @@ const router = createBrowserRouter([
       {
         path: ":postId",
         element: <PostPage />,
+        errorElement: <div>asdf</div>,
       },
     ],
   },
