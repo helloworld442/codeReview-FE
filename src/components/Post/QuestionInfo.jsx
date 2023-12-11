@@ -57,10 +57,8 @@ const QuestionPostInfo = styled.div`
   }
 
   .active {
-    span {
-      border: 1px solid rgb(102, 103, 171, 1);
-      color: rgb(102, 103, 171, 1);
-    }
+    border: 1px solid rgb(102, 103, 171, 1);
+    color: rgb(102, 103, 171, 1);
 
     svg {
       fill: rgb(102, 103, 171, 1);
