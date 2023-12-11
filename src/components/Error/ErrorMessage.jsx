@@ -36,4 +36,12 @@ const ErrorMessageDesc = styled.pre`
   color: #333;
 `;
 
-const ErrorMessageLink = styled.a``;
+const ErrorMessageLink = styled.a`
+  width: 150px;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: bold;
+  font-family: "Noto Sans KR";
+`;
