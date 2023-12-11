@@ -18,7 +18,6 @@ export default function ErrorMessage() {
 
 const StErrorMessage = styled.div`
   margin: 10px 0;
-  float: right;
 `;
 
 const ErrorMessageTitle = styled.h3`

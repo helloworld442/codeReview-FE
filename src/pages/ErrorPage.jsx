@@ -1,5 +1,5 @@
-import ErrorCode from "../components/Error/ErrorCode";
-import ErrorMessage from "../components/Error/ErrorMessage";
+import ErrorIcon from "../components/Error/ErrorIcon";
+import ErrorMain from "../components/Error/ErrorMain";
 import ErrorTemplate from "../components/Error/ErrorTemplate";
 import ErrorLayout from "../layout/ErrorLayout";
 
@@ -7,8 +7,8 @@ export default function ErrorPage() {
   return (
     <ErrorLayout>
       <ErrorTemplate>
-        <ErrorCode />
-        <ErrorMessage />
+        <ErrorIcon />
+        <ErrorMain />
       </ErrorTemplate>
     </ErrorLayout>
   );

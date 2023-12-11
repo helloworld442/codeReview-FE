@@ -12,5 +12,4 @@ const StErrorCode = styled.div`
   font-weight: bold;
   font-family: "Noto Sans KR";
   color: #333;
-  float: left;
 `;
