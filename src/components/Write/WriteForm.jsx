@@ -21,6 +21,7 @@ export default function WriteForm() {
   const writeMutation = useMutation(createReview, {
     onSuccess: () => {
       queryClient.invalidateQueries("reviews");
+      window.history.back();
     },
   });
 
