@@ -29,6 +29,7 @@ const ErrorMessageTitle = styled.h3`
 `;
 
 const ErrorMessageDesc = styled.pre`
+  margin-bottom: 24px;
   line-height: 1.4rem;
   font-size: 0.875rem;
   font-weight: 400;
@@ -38,11 +39,14 @@ const ErrorMessageDesc = styled.pre`
 
 const ErrorMessageLink = styled.a`
   display: inline-block;
-  width: 150px;
+  width: 235px;
   height: 48px;
   line-height: 48px;
   text-align: center;
   font-size: 0.95rem;
   font-weight: bold;
   font-family: "Noto Sans KR";
+  border-radius: 4px;
+  color: #fff;
+  background: rgb(102, 103, 171, 0.8);
 `;
