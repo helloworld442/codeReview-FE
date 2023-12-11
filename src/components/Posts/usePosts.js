@@ -9,5 +9,5 @@ export default function usePosts() {
     suspense: true,
   });
 
-  return data;
+  return data.content;
 }
