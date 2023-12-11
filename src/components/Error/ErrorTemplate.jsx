@@ -8,6 +8,6 @@ const StErrorTemplate = styled.div`
   position: absolute;
   top: 50%;
   width: 900px;
-  height: 500px;
+  height: 400px;
   margin: 144px 0;
 `;

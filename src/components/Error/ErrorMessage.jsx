@@ -11,13 +11,14 @@ export default function ErrorMessage() {
         {response.data ||
           `We're sorry, the page you requested\ncould not be found Please go back\nto the homepage`}
       </ErrorMessageDesc>
-      <ErrorMessageLink>Home Page</ErrorMessageLink>
+      <ErrorMessageLink href="/category">Home Page</ErrorMessageLink>
     </StErrorMessage>
   );
 }
 
 const StErrorMessage = styled.div`
   margin: 10px 0;
+  float: right;
 `;
 
 const ErrorMessageTitle = styled.h3`
