@@ -39,7 +39,7 @@ const ErrorMessageDesc = styled.pre`
 
 const ErrorMessageLink = styled.a`
   display: inline-block;
-  width: 260px;
+  width: 300px;
   height: 48px;
   line-height: 48px;
   text-align: center;
