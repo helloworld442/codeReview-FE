@@ -10,6 +10,7 @@ import AuthLayout from "../layout/AuthLayout";
 import SignUpPage from "../pages/SignUpPage";
 import SignInPage from "../pages/SignInPage";
 import PostPage from "../pages/PostPage";
+import ErrorPage from "../pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
@@ -38,7 +39,7 @@ const router = createBrowserRouter([
   {
     path: "/post/",
     element: <PostLayout />,
-    errorElement: <div>asdf</div>,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: ":postId",
