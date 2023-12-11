@@ -50,7 +50,6 @@ const router = createBrowserRouter([
   {
     path: "/posts/",
     element: <PostsLayout />,
-    errorElement: <ErrorPage />,
     children: [
       {
         path: ":categoryId",
