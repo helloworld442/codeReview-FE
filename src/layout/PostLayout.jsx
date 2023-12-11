@@ -1,12 +1,18 @@
 import styled from "styled-components";
-import Header from "../components/@common/Header";
 import { device } from "../utils/media";
+import { Outlet } from "react-router-dom";
+import Header from "../components/@common/Header";
+import PostTemplate from "../components/Post/PostTemplate";
+import PostASide from "../components/Post/PostASide";
 
-export default function PostLayout({ children }) {
+export default function PostLayout() {
   return (
     <Layout>
       <Header />
-      {children}
+      <PostTemplate>
+        <Outlet />
+        <PostASide />
+      </PostTemplate>
     </Layout>
   );
 }

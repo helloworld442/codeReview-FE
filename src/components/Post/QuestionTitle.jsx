@@ -1,15 +1,19 @@
+import styled from "styled-components";
 import PostModal from "./PostModal";
 import { ReactComponent as PenSquare } from "../../assets/pen-to-square-regular.svg";
 import { ReactComponent as Ellipsis } from "../../assets/ellipsis-vertical-solid.svg";
-import styled from "styled-components";
-import { usePostContext } from "./PostQuestion";
-import useDisabled from "../../hooks/useDisabled";
+import useToggle from "../../hooks/useToggle";
+import useInput from "../../hooks/useInput";
+import useUpdateValue from "./useUpdateValue";
+import useDeleteValue from "./useDeleteValue";
 
-export default function QuestionTitle() {
-  const { data, form, onChange, onToggleUpdateInput, onClickDeleteButton } =
-    usePostContext();
+export default function QuestionTitle({ post }) {
+  const [form, onChange] = useInput(post);
 
-  const [disabled, onClick, onKeyDown] = useDisabled(onToggleUpdateInput);
+  const onUpdateValue = useUpdateValue(form);
+  const onDeleteValue = useDeleteValue();
+
+  const [disabled, onClick, onKeyDown] = useToggle({ trigger: onUpdateValue });
 
   return (
     <>
@@ -24,17 +28,14 @@ export default function QuestionTitle() {
 
       {disabled && <QuestionPostPen onClick={onClick} />}
 
-      <PostModal
-        trigger={<QuestionPostEllipsis />}
-        onTrigger={onClickDeleteButton}
-      />
+      <PostModal trigger={<QuestionPostEllipsis />} onTrigger={onDeleteValue} />
 
       <QuestionPostView>
         <h6>
-          추천 <span>{data.heartCount}</span>
+          추천 <span>{post.heartCount}</span>
         </h6>
         <h6>
-          조회 <span>{data.views}</span>
+          조회 <span>{post.views}</span>
         </h6>
       </QuestionPostView>
     </>
@@ -58,7 +59,7 @@ const QuestionPostTitle = styled.input`
   &:enabled {
     border: 1px solid #d7e0e6;
     border-radius: 2px;
-    outline: 2px solid rgb(102, 103, 171, 0.8);
+    outline: 2px solid rgb(102, 103, 171, 1);
     background: #fefefe;
     color: #444;
   }

@@ -3,7 +3,7 @@
     {
       "category": "Javascript",
       "code": "//s의 길이만큼 반복하면서 다음 과정을 수행한다.\n//index의 길이만큼 반복하면서 다음 과정을 수행한다.\n//만약 skip에 해당 단어가 있다면 index를 올리지 않는다.\n//만약 skip에 해당 단어가 없다면 index를 올린다.\n//index만큼 뒤에 있는 알파벳을 answer에 더한다.\n//answer를 리턴한다.\n\nfunction solution(s, skip, index) {\n    var answer = '';\n    let alpha = \"abcdefghijklmnopqrstuvwxyz\";\n    for(let i = 0; i < s.length; i++) {\n        let j = 0;\n        let k = alpha.indexOf(s[i])\n        while (j < index) {\n            if(!skip.includes(alpha[(k+1) % 26])) {\n                j++;\n            }\n            k += 1;\n        }\n        k = k % 26\n        answer += alpha[k]\n    }\n    \n    return answer;\n}",
-      "title": "[Example 1] 자바스크립트 알고리즘 문의asdfasdfasdf",
+      "title": "[Example 1] 자바스크립트 알고리즘 문의",
       "problem": "[Example 1] 자바스크립트 알고리즘 문의\n[Example 1] 자바스크립트 알고리즘 문의\n[Example 1] 자바스크립트 알고리즘 문의",
       "question": "[Example 1] 자바스크립트 알고리즘 문의\n[Example 1] 자바스크립트 알고리즘 문의\n[Example 1] 자바스크립트 알고리즘 문의",
       "id": 11

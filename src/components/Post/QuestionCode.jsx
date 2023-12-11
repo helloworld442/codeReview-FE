@@ -1,18 +1,14 @@
 import styled from "styled-components";
-import { ReactComponent as PenSquare } from "../../assets/pen-to-square-regular.svg";
 import "highlight.js/styles/atom-one-light.min.css";
 import useHightlightCode from "../../hooks/useHightLightCode";
-import { usePostContext } from "./PostQuestion";
 
-export default function QuestionCode() {
-  const { data } = usePostContext();
-
-  const hightlightedCode = useHightlightCode(data?.code || "");
+export default function QuestionCode({ post }) {
+  const hightlightedCode = useHightlightCode(post.code);
 
   return (
     <QuestionPostCode>
       <ul className="code-number">
-        {data.code.split("\n")?.map((_, i) => (
+        {post.code.split("\n")?.map((_, i) => (
           <li key={i}>{i + 1}</li>
         ))}
       </ul>
@@ -70,16 +66,5 @@ const QuestionPostCode = styled.div`
     white-space: pre-wrap;
     overflow-y: hidden;
     line-height: 1.5rem;
-  }
-`;
-
-const QuestionPostPen = styled(PenSquare)`
-  width: 1.2rem;
-  height: 1.2rem;
-  margin-left: 12px;
-  fill: #888;
-
-  &:hover {
-    fill: rgb(102, 103, 171, 1);
   }
 `;

@@ -60,6 +60,9 @@ const PostItemTitle = styled.h3`
   font-weight: 550;
   font-family: "Noto Sans KR";
   color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 
   @media ${device.tablet} {
     margin-bottom: 8px;

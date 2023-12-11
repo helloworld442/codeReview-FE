@@ -8,9 +8,6 @@ export default function PostTemplate({ children }) {
 const StPostTemplate = styled.main`
   width: 100%;
   margin-top: 12px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
 
   @media ${device.tablet} {
     width: 100%;

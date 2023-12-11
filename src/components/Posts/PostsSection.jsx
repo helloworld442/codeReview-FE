@@ -57,7 +57,7 @@ const SectionBanner = styled.div`
   }
 
   .title {
-    font-size: 0.875rem;
+    font-size: 0.85rem;
     font-weight: 400;
     font-family: "Noto Sans KR";
     color: #333;

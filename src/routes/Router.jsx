@@ -1,4 +1,5 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import PostLayout from "../layout/PostLayout";
 import PostsLayout from "../layout/PostsLayout";
 import CategoryPage from "../pages/CategoryPage";
 import PostsPage from "../pages/PostsPage";
@@ -35,8 +36,14 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/post/:postId",
-    element: <PostPage />,
+    path: "/post/",
+    element: <PostLayout />,
+    children: [
+      {
+        path: ":postId",
+        element: <PostPage />,
+      },
+    ],
   },
   {
     path: "/posts/",

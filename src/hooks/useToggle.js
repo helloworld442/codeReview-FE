@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function useDisabled(onEvent) {
+export default function useToggle({ trigger }) {
   const [disabled, setDisabled] = useState(true);
 
   const onClick = (e) => {
@@ -9,8 +9,8 @@ export default function useDisabled(onEvent) {
 
   const onKeyDown = (e) => {
     if (e.keyCode === 13 && !e.shiftKey) {
-      onEvent(e);
       onClick(e);
+      trigger(e);
     }
   };
 

@@ -1,16 +1,16 @@
 import { ReactComponent as Heart } from "../../assets/heart-solid.svg";
 import styled from "styled-components";
-import { usePostContext } from "./PostQuestion";
+import useUpdateHeart from "./useUpdateHeart";
 
-export default function QuestionInfo() {
-  const { data, onClickHeartButton } = usePostContext();
+export default function QuestionInfo({ post }) {
+  const onUpdateHeart = useUpdateHeart();
 
   return (
     <QuestionPostInfo>
-      <h5>{new Date(data.createdAt).toLocaleDateString("ko-KR")}</h5>
-      <span onClick={onClickHeartButton}>
+      <h5>{new Date(post.createdAt).toLocaleDateString("ko-KR")}</h5>
+      <span onClick={onUpdateHeart}>
         <Heart />
-        좋아요 {data.heartCount}
+        좋아요 {post.heartCount}
       </span>
     </QuestionPostInfo>
   );

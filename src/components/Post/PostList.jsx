@@ -1,21 +1,15 @@
-import { useQuery } from "react-query";
 import styled from "styled-components";
-import { getReviews } from "../../apis/review";
-import PostItem from "./PostItem";
 import { device } from "../../utils/media";
+import PostItem from "./PostItem";
+import usePosts from "../Posts/usePosts";
 
 export default function PostList() {
-  const { data } = useQuery("reviews", getReviews, {
-    retry: 0,
-    staleTime: 5 * 60 * 1000,
-    cacheTime: 60 * 60 * 1000,
-    suspense: true,
-  });
+  const posts = usePosts();
 
   return (
     <StPostList>
       <PostListTitle>추천 게시글</PostListTitle>
-      {data.content.map((post) => (
+      {posts.map((post) => (
         <PostItem key={post.id} post={post} />
       ))}
     </StPostList>

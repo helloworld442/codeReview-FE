@@ -14,6 +14,8 @@ export default function PostASide() {
 }
 
 const StPostASide = styled.aside`
+  float: right;
+
   @media ${device.tablet} {
     width: 100%;
   }

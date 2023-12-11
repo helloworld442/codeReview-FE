@@ -1,24 +1,28 @@
 import styled from "styled-components";
 import { ReactComponent as PenSquare } from "../../assets/pen-to-square-regular.svg";
-import { usePostContext } from "./PostQuestion";
-import useDisabled from "../../hooks/useDisabled";
 import useTextArea from "../../hooks/useTextArea";
+import useUpdateValue from "./useUpdateValue";
+import useInput from "../../hooks/useInput";
+import useToggle from "../../hooks/useToggle";
 
-export default function QuestionDesc() {
+export default function QuestionDesc({ post }) {
   return (
     <>
-      <ProblemPost />
-      <QuestionPost />
+      <ProblemPost post={post} />
+      <QuestionPost post={post} />
     </>
   );
 }
 
-function ProblemPost() {
-  const { form, onChange, onToggleUpdateInput } = usePostContext();
-
-  const [disabled, onClick, onKeyDown] = useDisabled(onToggleUpdateInput);
-
+function ProblemPost({ post }) {
+  const [form, onChange] = useInput(post);
   const textareaRef = useTextArea(form.problem);
+
+  const onUpdateValue = useUpdateValue(form);
+
+  const [disabled, onClick, onKeyDown] = useToggle({
+    trigger: onUpdateValue,
+  });
 
   return (
     <StQuestionDesc>
@@ -37,12 +41,15 @@ function ProblemPost() {
   );
 }
 
-function QuestionPost() {
-  const { form, onChange, onToggleUpdateInput } = usePostContext();
-
-  const [disabled, onClick, onKeyDown] = useDisabled(onToggleUpdateInput);
-
+function QuestionPost({ post }) {
+  const [form, onChange] = useInput(post);
   const textareaRef = useTextArea(form.question);
+
+  const onUpdateValue = useUpdateValue(form);
+
+  const [disabled, onClick, onKeyDown] = useToggle({
+    trigger: onUpdateValue,
+  });
 
   return (
     <StQuestionDesc>
@@ -92,7 +99,7 @@ const QuestionDescContent = styled.textarea`
   &:enabled {
     border: 1px solid #d7e0e6;
     border-radius: 2px;
-    outline: 2px solid rgb(102, 103, 171, 0.8);
+    outline: 2px solid rgb(102, 103, 171, 1);
     background: #fefefe;
     color: #444;
   }
