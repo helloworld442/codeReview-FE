@@ -8,7 +8,10 @@ export default function QuestionInfo({ post }) {
   return (
     <QuestionPostInfo>
       <h5>{new Date(post.createdAt).toLocaleDateString("ko-KR")}</h5>
-      <span onClick={onUpdateHeart}>
+      <span
+        onClick={onUpdateHeart}
+        className={post.heartCheck ? "active" : null}
+      >
         <Heart />
         좋아요 {post.heartCount}
       </span>
@@ -50,6 +53,17 @@ const QuestionPostInfo = styled.div`
 
     &:hover {
       background: rgb(187, 187, 187, 0.1);
+    }
+  }
+
+  .active {
+    span {
+      border: 1px solid rgb(102, 103, 171, 1);
+      color: rgb(102, 103, 171, 1);
+    }
+
+    svg {
+      fill: rgb(102, 103, 171, 1);
     }
   }
 `;
