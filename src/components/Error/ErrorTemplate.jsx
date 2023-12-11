@@ -9,5 +9,5 @@ const StErrorTemplate = styled.div`
   top: 50%;
   width: 900px;
   height: 500px;
-  margin: 72px 0;
+  margin: 144px 0;
 `;

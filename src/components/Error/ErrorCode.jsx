@@ -8,7 +8,7 @@ export default function ErrorCode() {
 }
 
 const StErrorCode = styled.div`
-  font-size: 4.5rem;
+  font-size: 5rem;
   font-weight: bold;
   font-family: "Noto Sans KR";
   color: #333;
