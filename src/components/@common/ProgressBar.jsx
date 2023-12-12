@@ -43,6 +43,7 @@ const ProgressBarOuter = styled.div`
   ${(props) =>
     props.progresspercent >= 95 &&
     css`
+      transition-property: none;
       animation: hideProgress 0.15s 0.15s forwards;
 
       @keyframes hideProgress {
