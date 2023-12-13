@@ -11,10 +11,6 @@ export default function PostsItem({ post }) {
         <h4>김민승</h4>
         <h5>2023.08.12</h5>
       </PostsItemUser>
-      <PostsItemPoint>
-        <span>0</span>
-        <h5>포인트</h5>
-      </PostsItemPoint>
     </StPostsItem>
   );
 }
