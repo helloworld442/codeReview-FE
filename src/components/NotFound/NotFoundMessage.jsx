@@ -9,7 +9,7 @@ export default function NotFoundMessage() {
       <NotFoundMessageDesc>
         {`We're sorry, the page you requested\ncould not be found Please go back\nto the homepage`}
       </NotFoundMessageDesc>
-      <NotFoundMessageLink href="/category">Home Page</NotFoundMessageLink>
+      <NotFoundMessageLink href="/">Home Page</NotFoundMessageLink>
     </StNotFoundMessage>
   );
 }
