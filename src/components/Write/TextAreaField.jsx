@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function TextAreaField({ label, ...rest }) {
+export default function TextAreaField({ label, error, ...rest }) {
   return (
     <StTextAreaField>
       <TextAreaFieldLabel>
@@ -8,6 +8,7 @@ export default function TextAreaField({ label, ...rest }) {
         <b>*</b>
       </TextAreaFieldLabel>
       <TextAreaFieldTextArea {...rest} />
+      <TextAreaFieldError>{error}</TextAreaFieldError>
     </StTextAreaField>
   );
 }
@@ -54,4 +55,11 @@ const TextAreaFieldTextArea = styled.textarea`
   &::placeholder {
     color: rgb(157, 167, 174);
   }
+`;
+
+const TextAreaFieldError = styled.h5`
+  margin-top: 12px;
+  font-size: 1rem;
+  font-weight: 300;
+  color: red;
 `;

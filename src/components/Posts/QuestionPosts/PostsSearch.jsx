@@ -22,6 +22,8 @@ const PostsSearchForm = styled.form`
   align-items: center;
   gap: 12px;
   box-shadow: 0px 4px 10px 0px rgba(58, 62, 65, 0.1);
+  filter: blur(5px);
+  pointer-events: none;
 `;
 
 const PostsSearchButton = styled(SearchIcon)`

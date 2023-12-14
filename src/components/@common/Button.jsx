@@ -1,9 +1,9 @@
 import styled, { css } from "styled-components";
 import { device } from "../../utils/media";
 
-export default function Button({ size, text, $primary }) {
+export default function Button({ size, text, $primary, ...rest }) {
   return (
-    <StButton size={size} $primary={$primary}>
+    <StButton size={size} $primary={$primary} {...rest}>
       {text}
     </StButton>
   );

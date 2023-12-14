@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function InputField({ label, ...rest }) {
+export default function InputField({ label, error, ...rest }) {
   return (
     <StInputField>
       <InputFieldLabel>
@@ -8,6 +8,7 @@ export default function InputField({ label, ...rest }) {
         <b>*</b>
       </InputFieldLabel>
       <InputFieldInput {...rest} />
+      <InputFieldError>{error}</InputFieldError>
     </StInputField>
   );
 }
@@ -48,4 +49,11 @@ const InputFieldInput = styled.input`
   &::placeholder {
     color: rgb(157, 167, 174);
   }
+`;
+
+const InputFieldError = styled.h5`
+  margin-top: 12px;
+  font-size: 1rem;
+  font-weight: 300;
+  color: red;
 `;

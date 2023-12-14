@@ -2,7 +2,7 @@ import styled from "styled-components";
 import useTextArea from "../../hooks/useTextArea";
 import useHightlightCode from "../../hooks/useHightLightCode";
 
-export default function CodeField({ label, value, ...rest }) {
+export default function CodeField({ label, value, error, ...rest }) {
   const textareaRef = useTextArea(value);
   const hightlightCode = useHightlightCode(value);
 
@@ -32,6 +32,7 @@ export default function CodeField({ label, value, ...rest }) {
           spellCheck="false"
         />
       </CodeFieldBox>
+      <CoddeFieldError>{error}</CoddeFieldError>
     </StCodeField>
   );
 }
@@ -145,4 +146,11 @@ const CodeArea = styled.div`
     overflow-y: hidden;
     line-height: 1.5rem;
   }
+`;
+
+const CoddeFieldError = styled.h5`
+  margin-top: 12px;
+  font-size: 1rem;
+  font-weight: 300;
+  color: red;
 `;

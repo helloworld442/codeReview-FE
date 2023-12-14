@@ -15,7 +15,7 @@ import NotFoundPage from "../pages/NotFoundPage";
 
 const router = createBrowserRouter([
   {
-    path: "/category",
+    path: "/",
     element: <CategoryPage />,
   },
   {

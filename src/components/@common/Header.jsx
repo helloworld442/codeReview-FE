@@ -1,11 +1,9 @@
 import styled from "styled-components";
 import { ReactComponent as User } from "../../assets/user-regular.svg";
 import { useLocation } from "react-router-dom";
-import { device } from "../../utils/media";
 
 export default function Header() {
-  const { pathname } = useLocation();
-  const path = usePathname(pathname);
+  const [getActive, getRoutes] = usePathname();
 
   return (
     <StHeader>
@@ -13,17 +11,14 @@ export default function Header() {
         <HeaderLogo href="/">별무리</HeaderLogo>
 
         <HeaderMenu>
-          <a
-            href="/category"
-            className={pathname === "/category" ? "active" : null}
-          >
+          <a href="/" className={getActive("/")}>
             카테고리
           </a>
-          <a href="/write" className={pathname === "/write" ? "active" : null}>
+          <a href="/write" className={getActive("/write")}>
             글 남기기
           </a>
-          <a>소개글</a>
-          <a>문의하기</a>
+          <a onClick={() => alert("아직 완성되지 않는 기능입니다")}>블로그</a>
+          <a href="https://discord.gg/RnD7HP6wQD">F & A</a>
         </HeaderMenu>
 
         <HeaderIcon href="/user/signin">
@@ -31,31 +26,35 @@ export default function Header() {
         </HeaderIcon>
       </HeaderNav>
 
-      <HeaderPath>{path}</HeaderPath>
+      <HeaderPath>{getRoutes()}</HeaderPath>
     </StHeader>
   );
 }
 
-function usePathname(pathname) {
-  if (pathname.includes("category")) {
-    return "홈  >  카테고리";
-  }
+function usePathname() {
+  const { pathname } = useLocation();
 
-  if (pathname.includes("posts")) {
-    return "홈  >  카테고리  >  커뮤니티";
-  }
+  const getActive = (target) => {
+    if (pathname === target) return "active";
 
-  if (pathname.includes("write")) {
-    return "홈  >  글 남기기";
-  }
+    return "";
+  };
 
-  if (pathname.includes("signin")) {
-    return "홈  >  로그인";
-  }
+  const getRoutes = () => {
+    if (pathname.includes("category")) {
+      return "홈  >  카테고리";
+    }
 
-  if (pathname.includes("signup")) {
-    return "홈  >  회원가입";
-  }
+    if (pathname.includes("posts")) {
+      return "홈  >  카테고리  >  커뮤니티";
+    }
+
+    if (pathname.includes("write")) {
+      return "홈  >  글 남기기";
+    }
+  };
+
+  return [getActive, getRoutes];
 }
 
 const StHeader = styled.header`
@@ -84,10 +83,6 @@ const HeaderLogo = styled.a`
   font-weight: 300;
   color: rgb(102, 103, 171, 0.8);
   cursor: pointer;
-
-  @media ${device.mobile} {
-    font-size: 1.4rem;
-  }
 `;
 
 const HeaderMenu = styled.ul`
@@ -103,10 +98,6 @@ const HeaderMenu = styled.ul`
   .active {
     color: rgb(102, 103, 171, 0.8);
   }
-
-  @media ${device.mobile} {
-    display: none;
-  }
 `;
 
 const HeaderIcon = styled.a`
@@ -115,9 +106,5 @@ const HeaderIcon = styled.a`
   svg {
     width: 1.05rem;
     height: 1.05rem;
-  }
-
-  @media ${device.mobile} {
-    display: none;
   }
 `;

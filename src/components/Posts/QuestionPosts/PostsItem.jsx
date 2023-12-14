@@ -11,6 +11,10 @@ export default function PostsItem({ post }) {
         <h4>김민승</h4>
         <h5>2023.08.12</h5>
       </PostsItemUser>
+      <PostsItemPoint>
+        <span>0</span>
+        <h5>포인트</h5>
+      </PostsItemPoint>
     </StPostsItem>
   );
 }
@@ -106,6 +110,8 @@ const PostsItemPoint = styled.div`
   justify-content: center;
   align-items: center;
   gap: 12px;
+  filter: blur(5px);
+  pointer-events: none;
 
   span {
     font-size: 1.4rem;

@@ -20,8 +20,8 @@
       "category": "Javascript",
       "code": "import React from \"react\";\nimport ReactDOM from \"react-dom/client\";\nimport App from \"./App\";\nimport \"./utils/_index.scss\";\nimport reportWebVitals from \"./reportWebVitals\";\n\nconst root = ReactDOM.createRoot(document.getElementById(\"root\"));\nroot.render(\n  <React.StrictMode>\n    <App />\n  </React.StrictMode>\n);\n\n// If you want to start measuring performance in your app, pass a function\n// to log results (for example: reportWebVitals(console.log))\n// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals\nreportWebVitals();\n",
       "title": "[Example 3] 리엑트 코드 질문입니당",
-      "problem": "[Example 3] 리엑트 코드 질문입니당\n[Example 3] 리엑트 코드 질문입니당\n[Example 3] 리엑트 코드 질문입니당\n",
-      "question": "[Example 3] 리엑트 코드 질문입니당\n[Example 3] 리엑트 코드 질문입니당\n[Example 3] 리엑트 코드 질문입니당\n",
+      "problem": "다만, 선생님 강의에서는 c1 = 255; 의 값이 -1이 나오는 반면, 저는 빨간색 0으로 나옵니다. \n이것이 첫 번째 질문. (사진 첨부가 안되네요..;;)",
+      "question": "이 부분은 8 bit로 28승으로 256가지 중 0을 포함한 255까지 표현할 수 있어서 값이 255로 도출되잖아요. 대충\nㅁㅁㅁㅁ/ㅁㅁㅁㅁ ㅁ가 1bit라고 하면 0000/0000 = 0 이고 0000/0001 = 1 2진법으로 표현되는 것이고.\n1111/1111 = 255 가 되겠네요.",
       "id": 14
     }
   ]
